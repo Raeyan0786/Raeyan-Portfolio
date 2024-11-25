@@ -36,7 +36,7 @@ const Contact = () => {
             <div className='flex flex-col xl:flex-row gap-[30px]'> 
               <div className='w-[54%]'>
                 <div className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'>
-                  <h3 className='text-accent text-4xl'>Let's work together</h3>
+                  <h3 className='text-accent text-4xl'>Let&apos;s work together</h3>
                   <p className='text-white/60'>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem inventore eum explicabo vero facilis nemo incidunt error reiciendis porro voluptate! Fugiat necessitatibus voluptatum voluptate fugit sed ducimus quis recusandae sit.
                   </p>

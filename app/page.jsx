@@ -13,7 +13,7 @@ export default function Home() {
           <div className="text-center xl:text-left">
             <span className="text-xl">Full Stack Developer</span>
             <h1 className="h1 mb-6">
-              Hello I'm <br/> <span className="text-accent">Raeyan</span>
+              Hello I&apos;m <br /> <span className="text-accent">Raeyan</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">Given two integer arrays inorder and postorder where inorder is the inorder traversal of a binary tree.</p>
             <div className="flex items-center gap-8">
