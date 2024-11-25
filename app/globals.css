@@ -2,20 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body{
+    @apply font-primary bg-primary text-white leading-loose
+  }
+  h1{
+    @apply text-[48px] xl:text-[80px] font-semibold leading-[1.1]
+  }
+  h2{
+    @apply text-[36px] xl:text-[48px] font-semibold leading-[1.1]
+  }
+  h3{
+    @apply text-[20px] xl:text-[24px] font-semibold leading-[1.1]
+  }
+
+  .text-outline{
+    -webkit-text-stroke: 1px #ffffff;
+   }
+   
+   .text-outline-hover{
+     -webkit-text-stroke: 1px #00ff99;
+    }
 }
+
+
