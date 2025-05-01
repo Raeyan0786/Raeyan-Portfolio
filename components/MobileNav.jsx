@@ -1,6 +1,6 @@
 "use client"
-import React from 'react'
-import { Sheet,SheetTrigger,SheetContent } from './ui/sheet'
+import React,{useState,useEffect} from 'react'
+import { Sheet,SheetTrigger,SheetContent, SheetClose } from './ui/sheet'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Menu } from 'lucide-react'
@@ -30,9 +30,25 @@ const mob_link=[
 ]
 const MobileNav = () => {
     const path=usePathname();
+    const [activeMenu, setActiveMenu] = useState("/")
+
+  useEffect(() => {
+    let str = sessionStorage.getItem('activeMenu')
+    if (str) {
+      setActiveMenu(str);
+    }
+  }, [])
+
+  console.log("Session Storage",sessionStorage.getItem('activeMenu'));
+  
+
+  const handleActiveMenu = (id) => {
+    setActiveMenu(id)
+    sessionStorage.setItem('activeMenu', id || "")
+  }
   return (
     <Sheet>
-        <SheetTrigger className='flex justify-center items-center'>
+        <SheetTrigger asChild className='flex justify-center items-center'>
             <Menu className='text-[32px] text-accent'/>
         </SheetTrigger>
         <SheetContent className="flex flex-col">
@@ -45,9 +61,12 @@ const MobileNav = () => {
             </div>
         <nav className='flex flex-col justify-center items-center gap-8'>
         {mob_link.map((item,index)=>(
-            <Link key={`${index}-${item.name}`} href={item.path}  className={`${path===item.path?"text-accent border-b-2 border-accent":""} capitalize hover:text-accent font-medium transition-all`}>
+            <SheetClose asChild>
+                <Link key={`${index}-${item.name}`} href={item.path} onClick={() => handleActiveMenu(item.path)} className={`${activeMenu===item.path?"text-accent border-b-2 border-accent":""} capitalize hover:text-accent font-medium transition-all`}>
                 {item.name}
             </Link>
+            </SheetClose>
+            
         ))}
     </nav>
         </SheetContent>
