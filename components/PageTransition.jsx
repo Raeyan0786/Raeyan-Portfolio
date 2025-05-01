@@ -7,11 +7,14 @@ const PageTransition = ({children}) => {
     const path =usePathname();
   return (
     <AnimatePresence>
-        <motion.div initial={{opacity:1}} animate={{
+      <div key={path}>
+      <motion.div initial={{opacity:1}} animate={{
             opacity:0,
             transition:{delay:1,duration:0.4,ease:"easeInOut"}}}
             className='h-screen w-screen bg-primary fixed top-0 pointer-events-none'/>
         {children}
+      </div>
+        
     </AnimatePresence>
   )
 }

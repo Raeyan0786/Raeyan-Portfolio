@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-const nav_link=[
+export const nav_link=[
     {
         name:"Home",
         path:"/"
@@ -31,7 +31,7 @@ const Nav = () => {
   return (
     <nav className='flex gap-8'>
         {nav_link.map((item,index)=>(
-            <Link href={item.path} key={index} className={`${path===item.path?"text-accent border-b-2 border-accent":""} capitalize hover:text-accent font-medium transition-all`}>
+            <Link key={`${index}-${item.name}`} href={item.path} className={`${path===item.path?"text-accent border-b-2 border-accent":""} capitalize hover:text-accent font-medium transition-all`}>
                 {item.name}
             </Link>
         ))}

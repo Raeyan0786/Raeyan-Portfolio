@@ -12,7 +12,7 @@ const Photo = () => {
             transition:{delay:2,duration:0.4,ease:"easeIn"}
         }}>
         <motion.div 
-        className='w-[350px] h-[450px] absolute left-[5rem]'
+        className='w-[240px] h-[298px] xl:w-[350px] xl:h-[450px] absolute left-[3.2rem] xl:left-[5rem]'
         // left-[55px] top-14
         initial={{opacity:0}} animate={{
             opacity:1,
@@ -20,7 +20,7 @@ const Photo = () => {
         }}>
             <Image src="/assets/photo2.png" priority={true} quality={100} fill alt='' className='object-contain'/>
         </motion.div>
-        <motion.svg className="w-[506px] h-[506px]"
+        <motion.svg className="w-[340px] h-[340px] xl:w-[506px] xl:h-[506px]"
         fill="transparent"
         viewBox="0 0 506 506"
         xmlns="http://www.w3.org/2000/svg">
